@@ -22,15 +22,20 @@ const exportTypes = {
 
 const serialize = (argv.export && argv.export in exportTypes) ? exportTypes[argv.export] : exportTypes.ndjson
 
-process.stdin
+const serializedStream = process.stdin
   .pipe(parse({profile: 'simple'}))
   .pipe(extract({
     departement: argv.dep,
     pciPath: resolve(argv.pciPath),
     fantoirPath: resolve(argv.fantoirPath)
   }))
-  .pipe(serialize())
-  .pipe(process.stdout)
+  .pipe(serialize(argv))
+
+if (argv.out) {
+  serializedStream.resume()
+} else {
+  serializedStream.pipe(process.stdout)
+}
 
 process.on('unhandledRejection', (reason, p) => {
   console.error('Unhandled Rejection at:', p, 'reason:', reason)
