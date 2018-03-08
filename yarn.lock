@@ -1055,7 +1055,7 @@
     "@turf/invariant" "^5.1.5"
     d3-voronoi "1.1.2"
 
-JSONStream@^1.0.0, JSONStream@^1.3.2:
+JSONStream@^1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.2.tgz#c102371b6ec3a7cf3b847ca00c20bb0fce4c6dea"
   dependencies:
@@ -1989,13 +1989,6 @@ geojson-rbush@2.1.0:
     "@turf/helpers" "*"
     "@turf/meta" "*"
     rbush "*"
-
-geojson-stream@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/geojson-stream/-/geojson-stream-0.0.1.tgz#1a1d617167041c7302a45470318164699761502f"
-  dependencies:
-    JSONStream "^1.0.0"
-    through "^2.3.4"
 
 get-caller-file@^1.0.1:
   version "1.0.2"
@@ -3315,7 +3308,7 @@ through2@^2.0.0, through2@^2.0.2, through2@^2.0.3:
     readable-stream "^2.1.5"
     xtend "~4.0.1"
 
-"through@>=2.2.7 <3", through@^2.3.4, through@^2.3.6:
+"through@>=2.2.7 <3", through@^2.3.6:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 

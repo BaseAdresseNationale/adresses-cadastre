@@ -2,8 +2,7 @@
 const {resolve} = require('path')
 const argv = require('yargs').argv
 const {parse} = require('@etalab/majic')
-const {stringify} = require('geojson-stream')
-//
+const {stringify} = require('../lib/util/geojson-stream')
 const extract = require('../lib/extract')
 
 if (!argv.dep) {
