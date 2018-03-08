@@ -1,0 +1,51 @@
+{
+  "name": "@etalab/adresses-cadastre",
+  "version": "0.1.0-dev",
+  "description": "Extraction des adresses du cadastre de la DGFiP",
+  "main": "index.js",
+  "repository": "git@github.com:etalab/adresses-cadastre.git",
+  "author": "Jérôme Desboeufs <jerome.desboeufs@data.gouv.fr>",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "cadastre2adresses": "bin/cadastre2adresses.js"
+  },
+  "scripts": {
+    "lint": "xo",
+    "test": "echo noop"
+  },
+  "dependencies": {
+    "@etalab/fantoir": "^0.2.0",
+    "@etalab/majic": "^0.5.0",
+    "@turf/centroid": "^4.6.1",
+    "@turf/turf": "^5.1.6",
+    "JSONStream": "^1.3.2",
+    "chalk": "^2.3.1",
+    "csv-parser": "^1.11.0",
+    "debug": "^3.0.1",
+    "geojson-stream": "^0.0.1",
+    "get-stream": "^3.0.0",
+    "gunzip-stream": "^1.0.1",
+    "lodash": "^4.17.5",
+    "mississippi": "^1.3.0",
+    "natural": "^0.5.6",
+    "ndjson": "^1.5.0",
+    "pino": "^4.10.3",
+    "string_score": "^0.1.22",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "semicolon": false,
+    "space": 2,
+    "rules": {
+      "camelcase": "off",
+      "curly": "off"
+    }
+  }
+}
