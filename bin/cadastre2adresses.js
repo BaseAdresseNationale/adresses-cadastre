@@ -17,7 +17,8 @@ if (!argv.pciPath) {
 
 const exportTypes = {
   geojson: require('../lib/exports/geojson').serialize,
-  ndjson: require('ndjson').serialize
+  ndjson: require('ndjson').serialize,
+  'init-ban': require('../lib/exports/init-ban').serialize
 }
 
 const serialize = (argv.export && argv.export in exportTypes) ? exportTypes[argv.export] : exportTypes.ndjson
