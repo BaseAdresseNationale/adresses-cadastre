@@ -2,7 +2,6 @@
 const {resolve} = require('path')
 const argv = require('yargs').argv
 const {parse} = require('@etalab/majic')
-const {stringify} = require('../lib/util/geojson-stream')
 const extract = require('../lib/extract')
 
 if (!argv.dep) {
@@ -15,6 +14,13 @@ if (!argv.pciPath) {
   boom('Le paramètre `--pciPath` FANTOIR doit être fourni pour procéder à l’extraction')
 }
 
+const exportTypes = {
+  geojson: require('../lib/exports/geojson').serialize,
+  ndjson: require('ndjson').serialize
+}
+
+const serialize = (argv.export && argv.export in exportTypes) ? exportTypes[argv.export] : exportTypes.ndjson
+
 process.stdin
   .pipe(parse({profile: 'simple'}))
   .pipe(extract({
@@ -22,7 +28,7 @@ process.stdin
     pciPath: resolve(argv.pciPath),
     fantoirPath: resolve(argv.fantoirPath)
   }))
-  .pipe(stringify())
+  .pipe(serialize())
   .pipe(process.stdout)
 
 process.on('unhandledRejection', (reason, p) => {

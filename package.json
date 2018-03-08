@@ -29,6 +29,7 @@
     "gunzip-stream": "^1.0.1",
     "lodash": "^4.17.5",
     "mississippi": "^1.3.0",
+    "ndjson": "^1.5.0",
     "yargs": "^11.0.0"
   },
   "devDependencies": {
