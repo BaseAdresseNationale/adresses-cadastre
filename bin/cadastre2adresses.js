@@ -3,6 +3,7 @@ const {resolve} = require('path')
 const argv = require('yargs').argv
 const {parse} = require('@etalab/majic')
 const extract = require('../lib/extract')
+const boom = require('../lib/util/boom')
 
 if (!argv.dep) {
   boom('Le paramètre `--dep` doit être fourni pour procéder à l’extraction')
@@ -34,8 +35,3 @@ process.stdin
 process.on('unhandledRejection', (reason, p) => {
   console.error('Unhandled Rejection at:', p, 'reason:', reason)
 })
-
-function boom(message) {
-  console.error(message)
-  process.exit(1)
-}
