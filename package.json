@@ -15,7 +15,7 @@
   },
   "scripts": {
     "lint": "xo",
-    "test": "echo noop"
+    "test": "ava"
   },
   "dependencies": {
     "@etalab/fantoir": "^0.2.0",
@@ -35,6 +35,7 @@
     "yargs": "^11.0.0"
   },
   "devDependencies": {
+    "ava": "^0.25.0",
     "xo": "^0.18.2"
   },
   "xo": {
