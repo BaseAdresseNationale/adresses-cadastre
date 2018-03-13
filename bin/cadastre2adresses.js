@@ -43,6 +43,7 @@ async function main() {
         destPath: argv.destPath,
         exportType
       })
+      console.error(`Extraction du département ${dep} terminée`)
     } catch (err) {
       console.error(`Échec de l'extraction du département ${dep}`)
       console.error(err)
