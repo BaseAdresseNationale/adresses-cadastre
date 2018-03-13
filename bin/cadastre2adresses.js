@@ -33,14 +33,21 @@ const exportType = (argv.export && ['ndjson', 'init-ban', 'geojson'].includes(ar
 async function main() {
   await mkdirp(argv.destPath)
   const departementsToExtract = argv.dep || departements.map(d => d.code)
-  await Promise.all(departementsToExtract.map(dep => runWorker({
-    departement: dep,
-    majicPath: argv.majicPath,
-    fantoirPath: argv.fantoirPath,
-    pciPath: argv.pciPath,
-    destPath: argv.destPath,
-    exportType
-  })))
+  await Promise.all(departementsToExtract.map(async dep => {
+    try {
+      await runWorker({
+        departement: dep,
+        majicPath: argv.majicPath,
+        fantoirPath: argv.fantoirPath,
+        pciPath: argv.pciPath,
+        destPath: argv.destPath,
+        exportType
+      })
+    } catch (err) {
+      console.error(`Échec de l'extraction du département ${dep}`)
+      console.error(err)
+    }
+  }))
   workerFarm.end(workers)
 }
 
