@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-const {resolve} = require('path')
+const {resolve, join} = require('path')
+const {createReadStream} = require('fs')
 const argv = require('yargs').argv
 const {parse} = require('@etalab/majic')
 const extract = require('../lib/extract')
@@ -21,9 +22,15 @@ const exportTypes = {
   'init-ban': require('../lib/exports/init-ban').serialize
 }
 
+function getMajicInputStream() {
+  if (!argv.majicPath) return process.stdin
+  const path = join(resolve(argv.majicPath), 'departements', String(argv.dep), 'BATI.gz')
+  return createReadStream(path)
+}
+
 const serialize = (argv.export && argv.export in exportTypes) ? exportTypes[argv.export] : exportTypes.ndjson
 
-const serializedStream = process.stdin
+const serializedStream = getMajicInputStream(argv)
   .pipe(parse({profile: 'simple'}))
   .pipe(extract({
     departement: argv.dep,
