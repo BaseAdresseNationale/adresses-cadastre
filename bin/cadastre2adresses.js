@@ -5,6 +5,7 @@ const yargs = require('yargs')
 const mkdirp = promisify(require('mkdirp'))
 const workerFarm = require('worker-farm')
 const boom = require('../lib/util/boom')
+const departements = require('../departements.json')
 
 const workers = workerFarm({maxRetries: 0}, require.resolve('../lib/extract/worker'))
 const runWorker = promisify(workers)
@@ -14,9 +15,6 @@ const argv = yargs
   .coerce('dep', x => x.split(','))
   .argv
 
-if (!argv.dep) {
-  boom('Le paramètre `--dep` doit être fourni pour procéder à l’extraction')
-}
 if (!argv.fantoirPath) {
   boom('Le paramètre `--fantoirPath` doit être fourni pour procéder à l’extraction')
 }
@@ -34,7 +32,8 @@ const exportType = (argv.export && ['ndjson', 'init-ban', 'geojson'].includes(ar
 
 async function main() {
   await mkdirp(argv.destPath)
-  await Promise.all(argv.dep.map(dep => runWorker({
+  const departementsToExtract = argv.dep || departements.map(d => d.code)
+  await Promise.all(departementsToExtract.map(dep => runWorker({
     departement: dep,
     majicPath: argv.majicPath,
     fantoirPath: argv.fantoirPath,
