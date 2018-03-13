@@ -7,7 +7,7 @@ const workerFarm = require('worker-farm')
 const boom = require('../lib/util/boom')
 const departements = require('../departements.json')
 
-const workers = workerFarm({maxRetries: 0}, require.resolve('../lib/extract/worker'))
+const workers = workerFarm({maxRetries: 0, maxConcurrentCallsPerWorker: 1}, require.resolve('../lib/extract/worker'))
 const runWorker = promisify(workers)
 
 const argv = yargs
