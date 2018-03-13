@@ -1,10 +1,18 @@
 #!/usr/bin/env node
-const {resolve, join} = require('path')
-const {createReadStream} = require('fs')
-const argv = require('yargs').argv
-const {parse} = require('@etalab/majic')
-const extract = require('../lib/extract')
+const {resolve} = require('path')
+const {promisify} = require('util')
+const yargs = require('yargs')
+const mkdirp = promisify(require('mkdirp'))
+const workerFarm = require('worker-farm')
 const boom = require('../lib/util/boom')
+
+const workers = workerFarm({maxRetries: 0}, require.resolve('../lib/extract/worker'))
+const runWorker = promisify(workers)
+
+const argv = yargs
+  .coerce(['fantoirPath', 'pciPath', 'majicPath', 'destPath'], resolve)
+  .coerce('dep', x => x.split(','))
+  .argv
 
 if (!argv.dep) {
   boom('Le paramètre `--dep` doit être fourni pour procéder à l’extraction')
@@ -13,37 +21,34 @@ if (!argv.fantoirPath) {
   boom('Le paramètre `--fantoirPath` doit être fourni pour procéder à l’extraction')
 }
 if (!argv.pciPath) {
-  boom('Le paramètre `--pciPath` FANTOIR doit être fourni pour procéder à l’extraction')
+  boom('Le paramètre `--pciPath` doit être fourni pour procéder à l’extraction')
+}
+if (!argv.majicPath) {
+  boom('Le paramètre `--majicPath` doit être fourni pour procéder à l’extraction')
+}
+if (!argv.destPath) {
+  boom('Le paramètre `--destPath` doit être fourni pour procéder à l’extraction')
 }
 
-const exportTypes = {
-  geojson: require('../lib/exports/geojson').serialize,
-  ndjson: require('ndjson').serialize,
-  'init-ban': require('../lib/exports/init-ban').serialize
+const exportType = (argv.export && ['ndjson', 'init-ban', 'geojson'].includes(argv.export)) ? argv.export : 'ndjson'
+
+async function main() {
+  await mkdirp(argv.destPath)
+  await Promise.all(argv.dep.map(dep => runWorker({
+    departement: dep,
+    majicPath: argv.majicPath,
+    fantoirPath: argv.fantoirPath,
+    pciPath: argv.pciPath,
+    destPath: argv.destPath,
+    exportType
+  })))
+  workerFarm.end(workers)
 }
 
-function getMajicInputStream() {
-  if (!argv.majicPath) return process.stdin
-  const path = join(resolve(argv.majicPath), 'departements', String(argv.dep), 'BATI.gz')
-  return createReadStream(path)
-}
-
-const serialize = (argv.export && argv.export in exportTypes) ? exportTypes[argv.export] : exportTypes.ndjson
-
-const serializedStream = getMajicInputStream(argv)
-  .pipe(parse({profile: 'simple'}))
-  .pipe(extract({
-    departement: argv.dep,
-    pciPath: resolve(argv.pciPath),
-    fantoirPath: resolve(argv.fantoirPath)
-  }))
-  .pipe(serialize(argv))
-
-if (argv.out) {
-  serializedStream.resume()
-} else {
-  serializedStream.pipe(process.stdout)
-}
+main().catch(err => {
+  console.error(err)
+  process.exit(1)
+})
 
 process.on('unhandledRejection', (reason, p) => {
   console.error('Unhandled Rejection at:', p, 'reason:', reason)
