@@ -13,6 +13,7 @@ const runWorker = promisify(workers)
 const argv = yargs
   .coerce(['fantoirPath', 'pciPath', 'majicPath', 'destPath'], resolve)
   .coerce('dep', x => x.split(','))
+  .coerce('commune', String)
   .argv
 
 if (!argv.fantoirPath) {
@@ -37,6 +38,7 @@ async function main() {
     try {
       await runWorker({
         departement: dep,
+        commune: argv.commune,
         majicPath: argv.majicPath,
         fantoirPath: argv.fantoirPath,
         pciPath: argv.pciPath,
