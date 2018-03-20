@@ -1,6 +1,6 @@
 {
   "name": "@etalab/adresses-cadastre",
-  "version": "0.3.0-10",
+  "version": "0.3.0-11",
   "description": "Extraction des adresses du cadastre de la DGFiP",
   "main": "index.js",
   "repository": "git@github.com:etalab/adresses-cadastre.git",
