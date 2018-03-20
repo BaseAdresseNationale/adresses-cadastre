@@ -1,5 +1,5 @@
 const test = require('ava')
-const {dedupeParts} = require('../lib/reconciliation/voies-pci')
+const {dedupeParts} = require('../lib/voies/cadastre')
 
 test('déduplication simple', t => {
   t.deepEqual(
