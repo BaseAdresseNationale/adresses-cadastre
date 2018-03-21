@@ -29,7 +29,7 @@ if (!argv.destPath) {
   boom('Le paramètre `--destPath` doit être fourni pour procéder à l’extraction')
 }
 
-const exportType = (argv.export && ['ndjson', 'init-ban', 'geojson'].includes(argv.export)) ? argv.export : 'ndjson'
+const exportType = (argv.export && ['ndjson', 'init-ban', 'geojson', 'geojson-public'].includes(argv.export)) ? argv.export : 'ndjson'
 
 async function main() {
   await mkdirp(argv.destPath)
