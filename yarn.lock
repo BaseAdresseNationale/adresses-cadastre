@@ -1937,9 +1937,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codes-postaux@^3.0.0-0:
-  version "3.0.0-0"
-  resolved "https://registry.yarnpkg.com/codes-postaux/-/codes-postaux-3.0.0-0.tgz#4376227e7e235f1844284e874de9f9f79fb886f5"
+codes-postaux@^3.0.0-1:
+  version "3.0.0-1"
+  resolved "https://registry.yarnpkg.com/codes-postaux/-/codes-postaux-3.0.0-1.tgz#e2ee4d7b4fd3a57c5248be8c161bc214c5eee078"
   dependencies:
     lodash "^4.17.5"
 
