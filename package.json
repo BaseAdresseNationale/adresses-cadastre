@@ -18,7 +18,7 @@
     "test": "ava"
   },
   "dependencies": {
-    "@etalab/fantoir": "^0.2.0",
+    "@etalab/fantoir": "^0.3.0",
     "@etalab/majic": "^0.5.0",
     "@turf/turf": "^5.1.6",
     "JSONStream": "^1.3.2",

@@ -44,9 +44,9 @@
   dependencies:
     arrify "^1.0.1"
 
-"@etalab/fantoir@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@etalab/fantoir/-/fantoir-0.2.0.tgz#9b95f0eda31f0aec72eb4a45b6fc55d560248493"
+"@etalab/fantoir@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@etalab/fantoir/-/fantoir-0.3.0.tgz#6f4cf0ed251dc67119955d2cf531c5c27c0fc65e"
   dependencies:
     csv-write-stream "^2.0.0"
     decompress "^4.2.0"
