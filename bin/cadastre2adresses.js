@@ -4,8 +4,9 @@ const {promisify} = require('util')
 const yargs = require('yargs')
 const mkdirp = promisify(require('mkdirp'))
 const workerFarm = require('worker-farm')
+const departements = require('@etalab/cog/data/departements.json')
+
 const boom = require('../lib/util/boom')
-const departements = require('../departements.json')
 
 const workerFarmOptions = {
   maxRetries: 0,
