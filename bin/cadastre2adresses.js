@@ -18,11 +18,10 @@ const workerFarmOptions = {
 const workers = workerFarm(workerFarmOptions, require.resolve('../lib/extract/worker'))
 const runWorker = promisify(workers)
 
-const argv = yargs
+const {argv} = yargs
   .coerce(['fantoirPath', 'pciPath', 'majicPath', 'destPath'], resolve)
   .coerce('dep', x => x.split(','))
   .coerce('commune', String)
-  .argv
 
 if (!argv.fantoirPath) {
   boom('Le paramètre `--fantoirPath` doit être fourni pour procéder à l’extraction')
@@ -54,16 +53,16 @@ async function main() {
         exportType
       })
       console.error(`Extraction du département ${dep} terminée`)
-    } catch (err) {
+    } catch (error) {
       console.error(`Échec de l'extraction du département ${dep}`)
-      console.error(err)
+      console.error(error)
     }
   }))
   workerFarm.end(workers)
 }
 
-main().catch(err => {
-  console.error(err)
+main().catch(error => {
+  console.error(error)
   process.exit(1)
 })
 
