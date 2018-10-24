@@ -10,12 +10,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "bin": {
-    "cadastre2adresses": "bin/cadastre2adresses.js"
-  },
   "scripts": {
     "lint": "xo",
-    "test": "ava"
+    "test-unit": "ava",
+    "test": "yarn lint && yarn test-unit",
+    "build": "./bin/build.js"
   },
   "dependencies": {
     "@etalab/cog": "^0.1.0",
@@ -27,6 +26,7 @@
     "codes-postaux": "^3.0.0",
     "csv-parser": "^2.1.0",
     "csv-write-stream": "^2.0.0",
+    "dotenv": "^6.1.0",
     "get-stream": "^4.1.0",
     "gunzip-stream": "^1.0.1",
     "leven": "^2.1.0",
@@ -35,8 +35,7 @@
     "mkdirp": "^0.5.1",
     "natural": "^0.6.1",
     "ndjson": "^1.5.0",
-    "worker-farm": "^1.6.0",
-    "yargs": "^12.0.2"
+    "worker-farm": "^1.6.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",
