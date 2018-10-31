@@ -43,7 +43,7 @@ const destPath = resolve(process.env.DEST_PATH)
 const commune = process.env.COMMUNE
 const deps = process.env.DEPARTEMENTS ? process.env.DEPARTEMENTS.split(',') : undefined
 
-const exportType = (process.env.EXPORT_TYPE && ['ndjson', 'init-ban', 'geojson', 'geojson-public', 'bal-csv'].includes(process.env.EXPORT_TYPE)) ? process.env.EXPORT_TYPE : 'ndjson'
+const exportType = (process.env.EXPORT_TYPE && ['ndjson', 'init-ban', 'geojson', 'geojson-public', 'bal-csv', 'arcep-locaux'].includes(process.env.EXPORT_TYPE)) ? process.env.EXPORT_TYPE : 'ndjson'
 
 async function main() {
   await mkdirp(destPath)
