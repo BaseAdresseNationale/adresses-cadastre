@@ -39,8 +39,8 @@
     "worker-farm": "^1.6.0"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
-    "xo": "^0.23.0"
+    "ava": "^1.4.1",
+    "xo": "^0.24.0"
   },
   "xo": {
     "semicolon": false,

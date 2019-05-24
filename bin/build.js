@@ -22,12 +22,15 @@ const runWorker = promisify(workers)
 if (!process.env.FANTOIR_PATH) {
   boom('La variable FANTOIR_PATH doit être fournie pour procéder à l’extraction')
 }
+
 if (!process.env.PCI_PATH) {
   boom('La variable PCI_PATH doit être fournie pour procéder à l’extraction')
 }
+
 if (!process.env.MAJIC_PATH) {
   boom('La variable MAJIC_PATH doit être fournie pour procéder à l’extraction')
 }
+
 if (!process.env.DEST_PATH) {
   boom('La variable DEST_PATH doit être fournie pour procéder à l’extraction')
 }
