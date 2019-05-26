@@ -17,7 +17,7 @@
     "build": "./bin/build.js"
   },
   "dependencies": {
-    "@etalab/cog": "^0.1.0",
+    "@etalab/decoupage-administratif": "^0.6.2",
     "@etalab/fantoir": "^0.3.0",
     "@etalab/majic": "^0.6.0",
     "@etalab/project-legal": "^0.3.3",

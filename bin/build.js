@@ -4,7 +4,7 @@ const {resolve} = require('path')
 const {promisify} = require('util')
 const mkdirp = promisify(require('mkdirp'))
 const workerFarm = require('worker-farm')
-const departements = require('@etalab/cog/data/departements.json')
+const departements = require('@etalab/decoupage-administratif/data/departements.json')
 
 const boom = require('../lib/util/boom')
 
