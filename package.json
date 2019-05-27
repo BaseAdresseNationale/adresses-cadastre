@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@etalab/decoupage-administratif": "^0.6.2",
-    "@etalab/fantoir": "^0.3.0",
+    "@etalab/fantoir": "^0.7.1",
     "@etalab/majic": "^0.6.0",
     "@etalab/project-legal": "^0.3.3",
     "@turf/turf": "^5.1.6",

@@ -35,7 +35,6 @@ if (!process.env.DEST_PATH) {
   boom('La variable DEST_PATH doit être fournie pour procéder à l’extraction')
 }
 
-const fantoirPath = resolve(process.env.FANTOIR_PATH)
 const pciPath = resolve(process.env.PCI_PATH)
 const majicPath = resolve(process.env.MAJIC_PATH)
 const destPath = resolve(process.env.DEST_PATH)
@@ -54,7 +53,6 @@ async function main() {
         departement: dep,
         commune,
         majicPath,
-        fantoirPath,
         pciPath,
         destPath,
         exportType
