@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 require('dotenv').config()
-const {resolve} = require('path')
+const {resolve, join} = require('path')
 const {promisify} = require('util')
 const mkdirp = promisify(require('mkdirp'))
 const workerFarm = require('worker-farm')
@@ -31,13 +31,9 @@ if (!process.env.MAJIC_PATH) {
   boom('La variable MAJIC_PATH doit être fournie pour procéder à l’extraction')
 }
 
-if (!process.env.DEST_PATH) {
-  boom('La variable DEST_PATH doit être fournie pour procéder à l’extraction')
-}
-
 const pciPath = resolve(process.env.PCI_PATH)
 const majicPath = resolve(process.env.MAJIC_PATH)
-const destPath = resolve(process.env.DEST_PATH)
+const destPath = join(__dirname, '..', 'dist')
 
 const commune = process.env.COMMUNE
 const deps = process.env.DEPARTEMENTS ? process.env.DEPARTEMENTS.split(',') : undefined
