@@ -48,5 +48,8 @@
     "rules": {
       "curly": "off"
     }
+  },
+  "engines": {
+    "node": ">= 12"
   }
 }
