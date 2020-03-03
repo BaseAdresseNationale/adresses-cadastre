@@ -2,7 +2,7 @@
 require('dotenv').config()
 const {resolve, join} = require('path')
 const {promisify} = require('util')
-const mkdirp = promisify(require('mkdirp'))
+const mkdirp = require('mkdirp')
 const workerFarm = require('worker-farm')
 const departements = require('@etalab/decoupage-administratif/data/departements.json')
 
