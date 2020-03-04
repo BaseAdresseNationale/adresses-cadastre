@@ -23,15 +23,15 @@ if (!process.env.FANTOIR_PATH) {
   boom('La variable FANTOIR_PATH doit être fournie pour procéder à l’extraction')
 }
 
-if (!process.env.PCI_PATH) {
-  boom('La variable PCI_PATH doit être fournie pour procéder à l’extraction')
+if (!process.env.CADASTRE_MILLESIME) {
+  boom('La variable CADASTRE_MILLESIME doit être fournie pour procéder à l’extraction')
 }
 
 if (!process.env.MAJIC_PATH) {
   boom('La variable MAJIC_PATH doit être fournie pour procéder à l’extraction')
 }
 
-const pciPath = resolve(process.env.PCI_PATH)
+const millesimeCadastre = resolve(process.env.CADASTRE_MILLESIME)
 const majicPath = resolve(process.env.MAJIC_PATH)
 const destPath = join(__dirname, '..', 'dist')
 
@@ -49,7 +49,7 @@ async function main() {
         departement: dep,
         commune,
         majicPath,
-        pciPath,
+        millesimeCadastre,
         destPath,
         exportType
       })
