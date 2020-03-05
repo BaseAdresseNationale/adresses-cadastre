@@ -59,10 +59,10 @@
     leven "^3.1.0"
     lodash "^4.17.15"
 
-"@etalab/majic@^0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@etalab/majic/-/majic-0.8.1.tgz#be2e153238e0d0e7b9cbec56c8a7f6e0ec94ede4"
-  integrity sha512-uYWmEY82fCXK9iltKzceP4FCBiJS7LQt0pKHmsg0j+TMKK3QdvdK24tPd8xDYdW/L0aREGm5r8tQcHVglzLZ1Q==
+"@etalab/majic@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@etalab/majic/-/majic-0.8.2.tgz#5d41f5a4e9dd1859b253fadab2398b0eb5a340f9"
+  integrity sha512-iQc/wr9IlSos2PLAArMGrrQ80jrU6kAeqn5tnnkWseghStEV4cFbRFo/cyuZKd95AU4iEEVaH1loGOxosB7vaQ==
   dependencies:
     "@keyv/sqlite" "^2.0.2"
     get-stream "^5.1.0"

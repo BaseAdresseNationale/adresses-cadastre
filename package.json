@@ -19,7 +19,7 @@
   "dependencies": {
     "@etalab/decoupage-administratif": "^0.7.0",
     "@etalab/fantoir": "^0.8.3",
-    "@etalab/majic": "^0.8.1",
+    "@etalab/majic": "^0.8.2",
     "@etalab/project-legal": "^0.4.0",
     "@keyv/sqlite": "^2.0.2",
     "@turf/turf": "^5.1.6",
