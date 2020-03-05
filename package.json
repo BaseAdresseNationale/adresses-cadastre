@@ -47,10 +47,7 @@
   },
   "xo": {
     "semicolon": false,
-    "space": 2,
-    "rules": {
-      "curly": "off"
-    }
+    "space": 2
   },
   "engines": {
     "node": ">= 12"
