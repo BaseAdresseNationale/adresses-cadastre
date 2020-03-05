@@ -31,8 +31,7 @@ if (!process.env.MAJIC_PATH) {
   boom('La variable MAJIC_PATH doit être fournie pour procéder à l’extraction')
 }
 
-const millesimeCadastre = resolve(process.env.CADASTRE_MILLESIME)
-const majicPath = resolve(process.env.MAJIC_PATH)
+const millesimeCadastre = process.env.CADASTRE_MILLESIME
 const destPath = join(__dirname, '..', 'dist')
 
 const commune = process.env.COMMUNE
