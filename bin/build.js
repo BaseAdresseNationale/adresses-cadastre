@@ -48,7 +48,6 @@ async function main() {
       await runWorker({
         departement: dep,
         commune,
-        majicPath,
         millesimeCadastre,
         destPath,
         exportType
