@@ -44,11 +44,14 @@
   },
   "devDependencies": {
     "ava": "^3.12.1",
-    "xo": "^0.27.2"
+    "xo": "^0.33.1"
   },
   "xo": {
     "semicolon": false,
-    "space": 2
+    "space": 2,
+    "rules": {
+      "unicorn/no-fn-reference-in-iterator": "off"
+    }
   },
   "engines": {
     "node": ">= 12"
