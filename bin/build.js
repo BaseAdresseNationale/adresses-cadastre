@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 require('dotenv').config()
-const {resolve, join} = require('path')
+const {join} = require('path')
 const {promisify} = require('util')
 const mkdirp = require('mkdirp')
 const workerFarm = require('worker-farm')
