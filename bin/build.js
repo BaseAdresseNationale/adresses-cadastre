@@ -2,7 +2,7 @@
 require('dotenv').config()
 const {join} = require('path')
 const {promisify} = require('util')
-const mkdirp = require('mkdirp')
+const {ensureDir} = require('fs-extra')
 const workerFarm = require('worker-farm')
 const departements = require('@etalab/decoupage-administratif/data/departements.json')
 
@@ -40,7 +40,7 @@ const deps = process.env.DEPARTEMENTS ? process.env.DEPARTEMENTS.split(',') : un
 const exportType = (process.env.EXPORT_TYPE && ['ndjson', 'init-ban', 'geojson', 'geojson-public', 'bal-csv', 'arcep-locaux'].includes(process.env.EXPORT_TYPE)) ? process.env.EXPORT_TYPE : 'ndjson'
 
 async function main() {
-  await mkdirp(destPath)
+  await ensureDir(destPath)
   const departementsToExtract = deps || departements.map(d => d.code)
   await Promise.all(departementsToExtract.map(async dep => {
     try {
