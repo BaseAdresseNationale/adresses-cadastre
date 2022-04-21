@@ -45,14 +45,25 @@
   },
   "devDependencies": {
     "ava": "^4.2.0",
-    "xo": "^0.33.1"
+    "xo": "^0.48.0"
   },
   "xo": {
     "semicolon": false,
     "space": 2,
     "rules": {
+      "node/prefer-global/process": "off",
+      "node/prefer-global/buffer": "off",
+      "import/extensions": "off",
+      "unicorn/no-array-for-each": "off",
+      "unicorn/import-style": "off",
       "unicorn/no-fn-reference-in-iterator": "off",
-      "no-await-in-loop": "off"
+      "unicorn/no-array-callback-reference": "off",
+      "unicorn/prefer-module": "off",
+      "no-await-in-loop": "off",
+      "comma-dangle": [
+        "error",
+        "never"
+      ]
     }
   },
   "engines": {
