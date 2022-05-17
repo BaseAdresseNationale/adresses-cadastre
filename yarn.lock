@@ -2078,13 +2078,6 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codes-postaux@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/codes-postaux/-/codes-postaux-3.6.0.tgz#bff9acb746b3bfbbfe463fe923fa996fe145053f"
-  integrity sha512-yC3ejMZo/4oLDnnCSIJxc+QBs6FNnegLKGcazecC/+yZMdtT//CuEV2yv+cb7JGdZlnLaP8v8WMF3pQ3mvgKYw==
-  dependencies:
-    lodash "^4.17.21"
-
 color-convert@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.1.tgz#c1261107aeb2f294ebffec9ed9ecad529a6097ed"

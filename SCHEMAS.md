@@ -20,8 +20,6 @@ Dans __ce fichier__, il y a une ligne par adresse. Néanmoins le format BAL 1.1 
 | `destination_principale` | Catégorie d'utilisation principale de l'adresse (information indicative) | `habitation` | Non |
 | `commune_code` | Code de la commune (INSEE) | `27115` | Non |
 | `commune_nom` | Nom de la commune | `Breux-sur-Avre` | Oui |
-| `code_postal` | Code postal associé à l'adresse | `27570` | Non |
-| `libelle_acheminement` | Libellé d'acheminement associé à l'adresse | `BREUX SUR AVRE` | Non |
 | `source` | Source principale de l'information | `DGFiP/Etalab` | Oui |
 | `long` | Longitude en coordonnées WGS-84 | `1.087303` | Oui |
 | `lat` | Latitude en coordonnées WGS-84 | `48.759102` | Oui |
