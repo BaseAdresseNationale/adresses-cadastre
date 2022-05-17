@@ -18,7 +18,7 @@ Dans __ce fichier__, il y a une ligne par adresse. Néanmoins le format BAL 1.1 
 | `voie_nom` | Nom de la voie | `Chemin du Voisinet` | Oui |
 | `voie_code` | Code de la voie dans le référentiel FANTOIR | `0110` | Non |
 | `destination_principale` | Catégorie d'utilisation principale de l'adresse (information indicative) | `habitation` | Non |
-| `commune_code` | Code de la commune (INSEE) | `27115` | Non |
+| `commune_insee` | Code de la commune (INSEE) | `27115` | Oui |
 | `commune_nom` | Nom de la commune | `Breux-sur-Avre` | Oui |
 | `source` | Source principale de l'information | `DGFiP/Etalab` | Oui |
 | `long` | Longitude en coordonnées WGS-84 | `1.087303` | Oui |
