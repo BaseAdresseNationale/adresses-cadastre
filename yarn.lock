@@ -77,12 +77,12 @@
     pumpify "^2.0.1"
     split2 "^4.1.0"
 
-"@etalab/project-legal@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@etalab/project-legal/-/project-legal-0.5.0.tgz#2631e8351385a0eb60536d1a0accaa3afa267a81"
-  integrity sha512-LuujaPT1FfVHCPqUFP4sKidtMiYvb9EzKITlcvfLetfrz/Sou8X2xF2vvJWqEJTHSPp2dQUb2nYV0WTvJANb5A==
+"@etalab/project-legal@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@etalab/project-legal/-/project-legal-0.6.0.tgz#9932f023b85e91578fb3249e885677cb18ec072d"
+  integrity sha512-GgxpN38fpYRM+yuTw6HyhWYUnZo9Ux/sy9OZ27nblKhf6tW3PvO2Ts2OrYw+D9IzQWonVOl9gyHOsPjX91YhXg==
   dependencies:
-    proj4 "^2.6.3"
+    proj4 "^2.8.0"
 
 "@gar/promisify@^1.0.1":
   version "1.1.3"
@@ -117,6 +117,14 @@
   dependencies:
     pify "^5.0.0"
     sqlite3 "^5.0.3"
+
+"@keyv/sqlite@^3.5.2":
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/@keyv/sqlite/-/sqlite-3.5.2.tgz#6cc2a3e861172140b0fc6d43ca025e688be8c8c6"
+  integrity sha512-X6TjMHnnOKgRLClrS4RBynZ3GKPnSTz4bXTIE/0tPcDESMX0PxykEC04htd0dGmZrkn0c7Oxez/L4bOPGQrRrA==
+  dependencies:
+    pify "^5.0.0"
+    sqlite3 "^5.0.8"
 
 "@mapbox/node-pre-gyp@^1.0.0":
   version "1.0.9"
@@ -3226,10 +3234,10 @@ globby@^13.1.1:
     merge2 "^1.4.1"
     slash "^4.0.0"
 
-got@^11.8.3:
-  version "11.8.3"
-  resolved "https://registry.yarnpkg.com/got/-/got-11.8.3.tgz#f496c8fdda5d729a90b4905d2b07dbd148170770"
-  integrity sha512-7gtQ5KiPh1RtGS9/Jbv1ofDpBFuq42gyfEib+ejaRBJuj/3tQFeR5+gw57e4ipaU8c/rCjvX6fkQz2lyDlGAOg==
+got@^11.8.5:
+  version "11.8.5"
+  resolved "https://registry.yarnpkg.com/got/-/got-11.8.5.tgz#ce77d045136de56e8f024bebb82ea349bc730046"
+  integrity sha512-o0Je4NvQObAuZPHLFoRSkdG2lTgtcynqymzg2Vupdx6PorhaT5MCbIyXG6d4D94kk8ZG57QeosgdiqfJWhEhlQ==
   dependencies:
     "@sindresorhus/is" "^4.0.0"
     "@szmarczak/http-timer" "^4.0.5"
@@ -3888,6 +3896,14 @@ keyv@^4.2.8:
   version "4.2.8"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.2.8.tgz#6c91189fe6134d8a526cb360566693c095fcfb60"
   integrity sha512-IZZo6krhHWPhgsP5mBkEdPopVPN/stgCnBVuqi6dda/Nm5mDTOSVTrFMkWqlJsDum+B0YSe887tNxdjDWkO7aQ==
+  dependencies:
+    compress-brotli "^1.3.8"
+    json-buffer "3.0.1"
+
+keyv@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.3.0.tgz#b4352e0e4fe7c94111947d6738a6d3fe7903027c"
+  integrity sha512-C30Un9+63J0CsR7Wka5quXKqYZsT6dcRQ2aOwGcSc3RiQ4HGWpTAHlCA+puNfw2jA/s11EsxA1nCXgZRuRKMQQ==
   dependencies:
     compress-brotli "^1.3.8"
     json-buffer "3.0.1"
@@ -4844,10 +4860,10 @@ process-nextick-args@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
 
-proj4@^2.6.3:
-  version "2.7.5"
-  resolved "https://registry.yarnpkg.com/proj4/-/proj4-2.7.5.tgz#46c3ef841a9df57470d791f221160a9d68951945"
-  integrity sha512-5ecXUXbHAfvdhfBQpU7EhUfPCQGUCPmVup/4gnZA3bJY3JcK/xxzm4QQDz1xiXokN6ux65VDczlCtBtKrTSpAQ==
+proj4@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/proj4/-/proj4-2.8.0.tgz#b2cb8f3ccd56d4dcc7c3e46155cd02caa804b170"
+  integrity sha512-baC+YcD4xsSqJ+CpCZljj2gcQDhlKb+J+Zjv/2KSBwWNjk4M0pafgQsE+mWurd84tflMIsP+7j7mtIpFDHzQfQ==
   dependencies:
     mgrs "1.0.0"
     wkt-parser "^1.3.1"
@@ -5334,6 +5350,17 @@ sqlite3@^5.0.3:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/sqlite3/-/sqlite3-5.0.4.tgz#3ddff8d360dab3f17c596690d8663f353d876187"
   integrity sha512-ATvAe7JutFv/d+KTbLS58KsKn/t1raL/WGn2qZfZxwsrL/oGSP+0OlbQ2tX5jISvyu6/7JuKze3WkaiP1JAH6A==
+  dependencies:
+    "@mapbox/node-pre-gyp" "^1.0.0"
+    node-addon-api "^4.2.0"
+    tar "^6.1.11"
+  optionalDependencies:
+    node-gyp "8.x"
+
+sqlite3@^5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/sqlite3/-/sqlite3-5.0.8.tgz#b4b7eab7156debec80866ef492e01165b4688272"
+  integrity sha512-f2ACsbSyb2D1qFFcqIXPfFscLtPVOWJr5GmUzYxf4W+0qelu5MWrR+FAQE1d5IUArEltBrzSDxDORG8P/IkqyQ==
   dependencies:
     "@mapbox/node-pre-gyp" "^1.0.0"
     node-addon-api "^4.2.0"
