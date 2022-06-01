@@ -1,3 +1,4 @@
+alias_ssh=cadastre_prod
 depts=$(curl https://cadastre.data.gouv.fr/data/dgfip-pci-image/2021-02-01/tiff/departements/ | grep -o dep[0-9][0-9] | sed 's#dep##g' | sort | uniq)
 
 true >| localisants_2021.txt
@@ -15,4 +16,4 @@ for i in $(find PARCELLAIRE_EXPRESS_1-0__SHP_LAMB93_D0*/ -iname 'LOCALISANT.SHP'
      gzip "localisants-${dep}.geojson"
 done;
 
-scp localisants-*.gz cadastre_prod:/srv/cadastre-data/ign-localisants/2021-10-01/geojson/
+scp localisants-*.gz $alias_ssh:/srv/cadastre-data/ign-localisants/2021-10-01/geojson/
