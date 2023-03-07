@@ -21,6 +21,17 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+"@ban-team/fantoir@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@ban-team/fantoir/-/fantoir-0.15.0.tgz#fcca9507d5de44632c35115ac37d4068a7aa12b5"
+  integrity sha512-qnXjXP8OkrQTRkPORA+vma2KXvXT5tX5ZcDfP2CkzTi5nvbMRQRtCrj7RFq6tZz7RbOJIzaH7XKRz7Bdw+Xrug==
+  dependencies:
+    "@etalab/adresses-util" "^0.8.2"
+    "@keyv/sqlite" "^3.5.1"
+    keyv "^4.2.8"
+    leven "^3.1.0"
+    lodash "^4.17.21"
+
 "@eslint/eslintrc@^1.2.3", "@eslint/eslintrc@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.3.0.tgz#29f92c30bb3e771e4a2048c95fa6855392dfac4f"
@@ -47,21 +58,10 @@
     talisman "^1.1.4"
     written-number "^0.9.1"
 
-"@etalab/decoupage-administratif@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@etalab/decoupage-administratif/-/decoupage-administratif-1.1.1.tgz#a0b777847d3802864d81734bbd58eec90efd594a"
-  integrity sha512-2yD0tkK+As9OlImYdFXn9O1ABtMpExpCq0A7/d/HpruMgg7NYymUeNnHN0r8ICWgcKE//3uvMXeQ00xdOwUiZg==
-
-"@etalab/fantoir@^0.14.1":
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/@etalab/fantoir/-/fantoir-0.14.1.tgz#96ebb6dd3b91ece4b556b08b8aacd0e5b1a4fac1"
-  integrity sha512-rEYpB/En+7Yv5y7ladntK2U7epc6OiQif+Nsi9hORNxhzje5eN1TIDWJUS606+kYh9pMq4/hPasuwnYBzVDaug==
-  dependencies:
-    "@etalab/adresses-util" "^0.8.2"
-    "@keyv/sqlite" "^3.5.1"
-    keyv "^4.2.8"
-    leven "^3.1.0"
-    lodash "^4.17.21"
+"@etalab/decoupage-administratif@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@etalab/decoupage-administratif/-/decoupage-administratif-3.0.0.tgz#1d0d54b5b884c3df9555b4b8db543f83559629d3"
+  integrity sha512-WlXHeArXK7zwcxoPev8NM3ncUjaIiBYiTmY1wh3X6RXITKjTwn3yaYdQqbPplTfFA/ByllG4Y4q4Jt0bCmbEzw==
 
 "@etalab/majic@^0.11.0":
   version "0.11.0"

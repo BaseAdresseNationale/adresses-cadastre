@@ -1,9 +1,9 @@
 {
-  "name": "@etalab/adresses-cadastre",
+  "name": "@ban-team/adresses-cadastre",
   "version": "0.3.1",
   "description": "Extraction des adresses du cadastre de la DGFiP",
   "main": "index.js",
-  "repository": "git@github.com:etalab/adresses-cadastre.git",
+  "repository": "https://github.com/BaseAdresseNationale/adresses-cadastre",
   "author": "Jérôme Desboeufs <jerome.desboeufs@data.gouv.fr>",
   "license": "MIT",
   "private": false,
@@ -18,8 +18,8 @@
     "prepare-localisants": "node --max-old-space-size=2048 bin/prepare-localisants"
   },
   "dependencies": {
-    "@etalab/decoupage-administratif": "^1.1.1",
-    "@etalab/fantoir": "^0.14.1",
+    "@etalab/decoupage-administratif": "3.0.0",
+    "@ban-team/fantoir": "^0.15.0",
     "@etalab/majic": "^0.11.0",
     "@etalab/project-legal": "^0.6.0",
     "@keyv/sqlite": "^3.6.3",
